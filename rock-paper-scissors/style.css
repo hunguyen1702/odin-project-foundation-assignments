@@ -1,0 +1,118 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Roboto", sans-serif;
+  font-optical-sizing: auto;
+  font-style: normal;
+  font-variation-settings:
+    "wdth" 87.5;
+  border: none;
+  background-color: #ec6464;
+  color: #f4f5f5
+}
+
+.container {
+  padding: 20px 20%;
+}
+
+.title {
+  font-size: 48px;
+  text-align: center;
+  padding-top: 15%;
+}
+
+.score {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20% 0;
+}
+
+.score-board {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+}
+
+.score-board .points {
+  display: flex;
+  width: 201px;
+  height: 12px;
+  border-radius: 2px;
+  border: 1px solid #434141;
+}
+
+.score-board .point {
+  width: 40px;
+  height: 10px;
+  background-color: #ffffff;
+}
+
+.score-board .point.win {
+  background-color: rgb(30, 73, 30);
+}
+
+.score-board .divider {
+  font-size: 64px;
+  font-weight: 900;
+}
+
+.score-board .point:nth-last-child(n + 2) {
+  border-right: 1px solid #434141;
+}
+
+.score-board .player-name {
+  font-size: 28px;
+  font-weight: 400;
+}
+
+.score-board .choice {
+  margin-top: 20px;
+  font-size: 32px;
+  font-style: oblique;
+}
+
+.choices {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  gap: 20px;
+}
+
+.choices button {
+  padding: 20px;
+  width: 100px;
+  border-radius: 5px;
+}
+
+#rock {
+  background-color: #634d1d;
+  color: #ffffff;
+  font-weight: 500;
+  border: 2px solid #9b6f5f;
+}
+
+#paper {
+  background-color: #f4f5f5;
+  font-weight: 500;
+  border: 2px dashed #434141;
+  color: #2b2a2a;
+}
+
+#scissors {
+  background-color: #594e4e;
+  color: #ffffff;
+  font-weight: 500;
+  border: 2px groove #ec6464;
+}
+
+#result {
+  padding: 10% 0;
+  width: 100%;
+  text-align: center;
+  font-size: 64px;
+  font-weight: 600;
+}

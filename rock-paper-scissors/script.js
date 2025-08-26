@@ -1,58 +1,93 @@
 (() => {
-  const CHOICES = ['rock', 'paper', 'scissors']
-  const ROUNDS = 5
+  const CHOICES = ['Paper', 'Rock', 'Scissors']
+  const WINNING_SCORE = 5
+  const resultContainer = document.querySelector("#result")
+  const humanScoreElement = document.querySelector("#human-points")
+  const computerScoreElement = document.querySelector("#computer-points")
+  const humanChoiceElm = document.querySelector("#human-choice")
+  const computerChoiceElm = document.querySelector("#computer-choice")
+  let humanScore = 0
+  let computerScore = 0
 
-  const playRound = () => {
-    const humanChoice = prompt('Choose Rock, Paper, or Scissors:').toLowerCase()
-    if (!CHOICES.includes(humanChoice)) {
-      return null
+  const showResult = (result) => {
+    resultContainer.textContent = result
+  }
+
+  const showChoice = (target, choice) => {
+    if (target === "human") {
+      humanChoiceElm.textContent = choice
+    } else if (target === "computer") {
+      computerChoiceElm.textContent = choice
     }
+  }
 
+  const resetGame = () => {
+    round = 1
+    humanScore = 0
+    computerScore = 0
+    resetScoreBoard()
+  }
+
+  const resetScoreBoard = () => {
+    document.querySelectorAll(".points .win").forEach(element => {
+      element.classList.remove("win")
+    })
+  }
+
+  const addScore = (winner) => {
+    if (winner == "human") {
+      humanScore += 1
+      humanScoreElement.children[humanScore - 1].classList.add("win")
+    } else if (winner == "computer") {
+      computerScore += 1
+      computerScoreElement.children[computerScore - 1].classList.add("win")
+    }
+  }
+
+  const playRound = (humanChoice) => {
     const computerChoice = CHOICES[Math.floor(Math.random() * CHOICES.length)]
+    showChoice("human", humanChoice)
+    showChoice("computer", computerChoice)
+
     if (humanChoice === computerChoice) {
-      alert('Tie!')
-      return 0
+      showResult("Tie!")
     }
 
     const humanChoiceIndex = CHOICES.findIndex(choice => choice === humanChoice)
     const computerChoiceIndex = CHOICES.findIndex(choice => choice === computerChoice)
 
-    if (humanChoiceIndex < computerChoiceIndex) {
-      alert('You win!')
-      return 1
+    if (humanChoiceIndex === 0 && computerChoiceIndex === 2) {
+      addScore("computer")
+      showResult("You lose!")
+    } else if (humanChoiceIndex === 2 && computerChoiceIndex === 0) {
+      addScore("human")
+      showResult("You win!")
+    } else if (humanChoiceIndex < computerChoiceIndex) {
+      addScore("human")
+      showResult("You win!")
     } else {
-      alert('You lose!')
-      return -1
+      addScore("computer")
+      showResult("You lose!")
+    }
+
+    if (humanScore === WINNING_SCORE) {
+      showResult("You win the game!")
+      resetGame()
+      return
+    } else if (computerScore === WINNING_SCORE) {
+      showResult("You lose the game!")
+      resetGame()
+      return
     }
   }
 
-  const playGame = () => {
-    let humanScore = 0
-    let computerScore = 0
-
-    for (i = 1; i <= ROUNDS; i++) {
-      console.log(`Round ${i} starts!`)
-      let result = playRound()
-      while (result === null) {
-        console.log('You have to choose between Rock, Paper, or Scissors!')
-        result = playRound()
-      }
-
-      if (result > 0) {
-        humanScore += result
-      } else {
-        computerScore -= result
-      }
-      console.log(`Round ${i} ends!`)
-    }
-
-    if (humanScore > computerScore) {
-      alert('You win the game!')
-    }
-    if (humanScore < computerScore) {
-      alert('You lose the game!')
-    }
-  }
-
-  playGame()
+  document.querySelector("#rock").addEventListener("click", () => {
+    playRound("Rock")
+  })
+  document.querySelector("#paper").addEventListener("click", () => {
+    playRound("Paper")
+  })
+  document.querySelector("#scissors").addEventListener("click", () => {
+    playRound("Scissors")
+  })
 })()
