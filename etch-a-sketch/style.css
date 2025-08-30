@@ -1,0 +1,155 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Roboto", sans-serif;
+  font-optical-sizing: auto;
+  font-style: normal;
+  font-variation-settings:
+    "wdth" 87.5;
+  border: none;
+}
+
+html {
+  font-size: 12px;
+}
+
+.container {
+  padding: 10px 10%;
+}
+
+.flex-container {
+  display: flex;
+}
+
+.header {
+  font-size: 1.5em;
+  color: #fafafafa;
+  font-style: italic;
+  font-weight: 800;
+  background-color: #eeb07d;
+}
+
+.sketch-board-container {
+  padding: 10px;
+  display: table;
+  border-collapse: collapse;
+  margin: 0 auto;
+}
+
+.sketch-board-container .row .grid {
+  border: 1px solid #000000;
+  display: table-cell;
+}
+
+.sketch-board-container .row {
+  display: table-row;
+}
+
+.palette {
+  align-items: center;
+  gap: 10px;
+  justify-content: space-around;
+}
+
+.configure-section {
+  padding: 0 10px;
+  margin-top: 20px;
+  height: 10vh;
+  border: 1px solid #000000;
+  gap: 10px;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.palette .default-palette {
+  gap: 10px;
+  align-items: center;
+  justify-content: space-around;
+}
+
+.default-palette .color {
+  height: 50px;
+  width: 50px;
+  border: 1px solid #000000;
+  border-radius: 100%;
+  transition: ease-in-out;
+  transition-duration: 0.1s;
+}
+
+.picker-hover:hover {
+  border: 5px double #ffffff;
+  transition: ease-in-out;
+  transition-duration: 0.1s;
+  cursor: pointer;
+}
+
+.palette .custom-palette {
+  position: relative;
+  flex-direction: column;
+}
+
+#picking-color {
+  height: 30px;
+  width: 30px;
+  border: 5px groove #8d7777;
+  border-radius: 100%;
+  margin-right: 10px;
+  margin-left: 10px;
+  box-shadow: -2px 5px 5px #6c5c5c;
+}
+
+#custom-palette-input {
+  visibility: hidden;
+  position: absolute;
+  top: -5px;
+}
+
+label[for="custom-palette-input"] {
+  height: 50px;
+  width: 50px;
+  border: 1px solid #000000;
+  border-radius: 100%;
+  background:
+    linear-gradient(217deg, #ebaa02, transparent 60.71%),
+    linear-gradient(127deg, #cf204e, transparent 60.71%),
+    linear-gradient(336deg, #322782, transparent 60.71%);;
+}
+
+.layout-input {
+  gap: 10px;
+  align-items: center;
+}
+
+.layout-input label[for="grid-size-input"] {
+  font-size: 1.2em;
+  font-weight: 600;
+}
+
+.layout-input #grid-size-input {
+  border: 1px solid #b68686;
+  padding: 8px;
+  font-size: 1.2em;
+  font-weight: 800;
+  border-radius: 10px;
+}
+
+#reset-button {
+  width: 50px;
+  height: 50px;
+  border-radius: 100%;
+  background-color: transparent;
+  cursor: pointer;
+}
+
+#reset-button:hover {
+  background-color: #fafafafa;
+  transition: ease-in-out;
+  transition-duration: 0.2s;
+}
+
+#reset-button:active {
+  background-color: #d4d2d2fa;
+  transition: ease-in-out;
+  transition-duration: 0.2s;
+}

@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+  <title>Etch-a-Sketch</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="script.js" defer></script>
+  <script src="https://kit.fontawesome.com/8c7250ef5f.js" crossorigin="anonymous" defer></script>
+</head>
+<body>
+  <div class="container header">
+    <h1>Etch-a-Sketch</h1>
+  </div>
+  <div class="container">
+    <div class="sketch-board-container">
+    </div>
+  </div>
+  <div class="container">
+    <div class="configure-section flex-container">
+      <div class="palette flex-container">
+        <div id="picking-color"></div>
+        <div class="default-palette flex-container">
+        </div>
+        <div class="custom-palette flex-container">
+          <label for="custom-palette-input" class="picker-hover"></label>
+          <input type="color" id="custom-palette-input" name="custom-palette-input">
+        </div>
+      </div>
+      <div class="layout-input flex-container">
+        <label for="grid-size-input">Grid size: </label>
+        <input type="number" id="grid-size-input" name="grid-size-input" min="0" max="100" value="16">
+        <button class="reset-button" id="reset-button">
+          <i class="fa-solid fa-arrow-rotate-right fa-flip-horizontal fa-2xl" style="color: #74C0FC;"></i>
+        </button>
+      </div>
+  </div>
+</body>
+</html>
