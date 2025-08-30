@@ -89,8 +89,10 @@
       clearTimeout(mouseHoldTimeout)
     })
     grid.addEventListener("mouseenter", () => {
-      if (coloring) colorGrid(grid)
-      mouseHoldTimeout = setTimeout(() => colorGrid(grid), HOLD_TIME_TO_DARKER)
+      if (coloring) {
+        colorGrid(grid)
+        mouseHoldTimeout = setTimeout(() => colorGrid(grid), HOLD_TIME_TO_DARKER)
+      }
     })
     grid.addEventListener("mouseleave", () => {
       clearTimeout(mouseHoldTimeout)
