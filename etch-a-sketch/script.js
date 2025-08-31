@@ -69,33 +69,36 @@
         grid.style.backgroundColor = currentColor
         return
       }
-      const newR = Math.max(Number(gridR) - (Number(currentColorRbg[0]) / 4), 0)
-      const newG = Math.max(Number(gridG) - (Number(currentColorRbg[1]) / 4), 0)
-      const newB = Math.max(Number(gridB) - (Number(currentColorRbg[2]) / 4), 0)
+      let newR = Number(gridR) - (Number(currentColorRbg[0]) / 6)
+      let newB = Number(gridB) - (Number(currentColorRbg[1]) / 6)
+      let newG = Number(gridG) - (Number(currentColorRbg[2]) / 6)
+      newR = newR < (Number(currentColorRbg[0]) / 6) ? gridR : newR
+      newB = newB < (Number(currentColorRbg[1]) / 6) ? gridB : newB
+      newG = newG < (Number(currentColorRbg[2]) / 6) ? gridG : newG
       grid.style.backgroundColor = `rgb(${newR}, ${newG}, ${newB})`
     }
   }
 
   const assignGridEventListener = (grid) => {
-    const HOLD_TIME_TO_DARKER = 750
-    let mouseHoldTimeout
+    const HOLD_TIME_TO_DARKER = 500
+    let mouseHoldTimeInterval
     grid.addEventListener("mousedown", () => {
       coloring = true
       colorGrid(grid)
-      mouseHoldTimeout = setTimeout(() => colorGrid(grid), HOLD_TIME_TO_DARKER)
+      mouseHoldTimeInterval = setInterval(() => colorGrid(grid), HOLD_TIME_TO_DARKER)
     })
     grid.addEventListener("mouseup", () => {
       coloring = false
-      clearTimeout(mouseHoldTimeout)
+      clearTimeout(mouseHoldTimeInterval)
     })
     grid.addEventListener("mouseenter", () => {
       if (coloring) {
         colorGrid(grid)
-        mouseHoldTimeout = setTimeout(() => colorGrid(grid), HOLD_TIME_TO_DARKER)
+        mouseHoldTimeInterval = setInterval(() => colorGrid(grid), HOLD_TIME_TO_DARKER)
       }
     })
     grid.addEventListener("mouseleave", () => {
-      clearTimeout(mouseHoldTimeout)
+      clearTimeout(mouseHoldTimeInterval)
     })
   }
 
