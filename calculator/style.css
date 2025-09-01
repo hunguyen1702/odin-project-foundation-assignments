@@ -1,0 +1,108 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Roboto", sans-serif;
+  font-optical-sizing: auto;
+  font-style: normal;
+  font-variation-settings:
+    "wdth" 87.5;
+  border: none;
+  background-color: #3e3e3e;
+}
+
+html {
+  font-size: 12px;
+}
+
+.container {
+  padding: 10% 20%;
+  height: 100vh;
+}
+
+.calculator {
+  display: flex;
+  flex-direction: column;
+  padding: 35px;
+  width: 400px;
+  margin: auto;
+  gap: 15px;
+  border: 2px solid #f2f2f2;
+  border-radius: 2%;
+  box-shadow: 26px 31px 25px 0 rgb(255 255 255 / 25%);
+}
+
+.calculator .display {
+  display: flex;
+  flex-direction: column;
+  gap: 1em;
+}
+
+.calculator .buttons {
+  display: flex;
+  flex-direction: column;
+  gap: 1em;
+}
+
+.buttons-row {
+  display: flex;
+  gap: 1em;
+  justify-content: space-between;
+  width: 100%;
+}
+
+.buttons-row button {
+  width: 60px;
+  height: 60px;
+  font-size: 1.5em;
+  font-weight: 600;
+  color: #f2f2f2;
+  border: 1px solid #f2f2f2;
+  border-radius: 100%;
+  transition: ease-in-out;
+}
+
+.buttons-row button:hover {
+  cursor: pointer;
+  background-color: #302f2f;
+}
+
+.buttons-row button:hover i {
+  cursor: pointer;
+  background-color: #302f2f;
+}
+
+.buttons-row button:active {
+  cursor: pointer;
+  background-color: #272626;
+}
+
+.buttons-row button:active i {
+  cursor: pointer;
+  background-color: #272626;
+}
+
+.display {
+  border: 1px solid #f2f2f2;
+  border-radius: 2px;
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  padding: 10px;
+  width: 100%;
+}
+
+.display input {
+  text-align: right;
+  color: #f2f2f2;
+}
+
+.display #operation {
+  font-size: 1em;
+  font-weight: 400;
+}
+
+.display #result {
+  font-size: 2em;
+  font-weight: 800;
+}
