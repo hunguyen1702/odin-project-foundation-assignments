@@ -1,0 +1,211 @@
+/* http://meyerweb.com/eric/tools/css/reset/
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 12px;
+	font: inherit;
+	vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+body {
+	line-height: 1;
+}
+ol, ul {
+	list-style: none;
+}
+blockquote, q {
+	quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: '';
+	content: none;
+}
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+
+@font-face {
+	font-family: 'Norse Bold';
+	src: url('./assets/Norse-Bold.otf');
+}
+
+.container {
+  height: 100vh;
+	width: 100vw;
+	display: flex;
+	font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
+}
+
+.container.light {
+	--hero-title-background-color: rgb(45, 111, 138, 0.35);
+	--background-image: url('./assets/light-bg.jpg');
+	--form-border: 0.1px solid rgb(241, 241, 241);
+}
+
+.hero {
+	flex: 1 0.75 calc(100vw / 3);
+	position: relative;
+}
+
+.container.light .hero {
+	background-image: var(--background-image);
+	background-size: cover;
+	background-position-x: -20rem;
+}
+
+.hero .hero-title {
+	background-color: var(--hero-title-background-color);
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	gap: 0.45rem;
+	position: relative;
+	top: calc(100vh / 4);
+	padding: 1rem 0;
+}
+
+.hero .hero-title .hero-text {
+	font-size: 6.5rem;
+	color: rgb(234, 237, 236);
+	font-family: 'Norse Bold', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
+	position: relative;
+	top: 1rem;
+}
+
+.hero .hero-title img {
+	width: auto;
+	height: 8rem;
+}
+
+.container .img-credit {
+	text-align: center;
+	color: rgb(72 101 109);
+	position: absolute;
+	bottom: 1rem;
+	width: 100%;
+}
+
+.container .img-credit a {
+	color: rgb(72 101 109);
+}
+
+.container .img-credit a:visited {
+	color: rgb(72 101 109);
+}
+
+.form-container {
+	flex: 1 0.75 calc(100vw / 3 * 2);
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	gap: 3rem;
+	color: rgb(45, 65, 69);
+}
+
+.form-container .cta-text {
+	font-size: 1.55rem;
+	white-space: pre-line;
+	padding: 0 2.5rem;
+	width: 80%;
+	line-height: 1.2;
+	font-weight: 400;
+	color: rgb(33, 47, 50);
+}
+
+.form-container form {
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+	border-top: var(--form-border);
+	border-bottom: var(--form-border);
+	padding: 1.75rem 2.5rem;
+	padding-bottom: 2.5rem;
+	box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.384);
+	gap: 1.45rem;
+}
+
+.form-container .cta-text em {
+	font-style: italic;
+}
+
+.form-container form label {
+	text-transform: uppercase;
+	font-size: 0.85rem;
+	font-weight: 500;
+}
+
+.form-container legend {
+	font-size: 1.5rem;
+	font-weight: 600;
+}
+
+.form-container fieldset {
+	display: flex;
+	flex-direction: row;
+	justify-content: flex-start;
+	gap: 5rem;
+}
+
+.form-container form input {
+	min-width: 15rem;
+	height: 1.5rem;
+	font-size: 1rem;
+	padding: 5px 10px;
+	border: 1px solid rgb(170, 169, 169);
+	border-radius: 5px;
+}
+
+.form-container .field-group {
+	display: flex;
+	flex-direction: column;
+	gap: 0.25rem;
+}
+
+.form-action {
+	padding: 0 2.5rem;
+	display: flex;
+	flex-direction: column;
+	gap: 1rem;
+}
+
+.form-action a {
+	color: rgb(72 101 109);
+}
+
+.form-action a:visited {
+	color: rgb(72 101 109);
+}
+
+.form-action button {
+	width: 12rem;
+	padding: 0.75rem 2rem;
+	font-size: 1rem;
+	font-weight: 700;
+	background-color: rgb(72 101 109);
+	border: none;
+	border-radius: 4px;
+	color: rgb(234, 237, 236);
+}
