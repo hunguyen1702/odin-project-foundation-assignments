@@ -63,6 +63,28 @@ table {
 	--hero-title-background-color: rgb(45, 111, 138, 0.35);
 	--background-image: url('./assets/light-bg.jpg');
 	--form-border: 0.1px solid rgb(241, 241, 241);
+	--form-shadow-color: rgba(0, 0, 0, 0.384);
+	--text-color: rgb(72 101 109);
+	--contract-text-color: rgb(234, 237, 236);
+	--form-text-color: rgb(45, 65, 69);
+	--cta-text-color: rgb(33, 47, 50);
+	--button-bg-color: rgb(72 101 109);
+	--input-bg-color: transparent;
+	background-color: transparent;
+}
+
+.container.dark {
+	--hero-title-background-color: rgb(197 139 11 / 20%);
+	--background-image: url('./assets/dark-bg.jpg');
+	--form-border: 0.1px solid rgba(170, 136, 34, 0.292);
+	--form-shadow-color: rgba(139, 111, 28, 0.315);
+	--text-color: rgb(255, 255, 255);
+	--contract-text-color: rgb(234, 237, 236);
+	--form-text-color: rgb(170 137 34);
+	--cta-text-color: rgb(170 137 34);
+	--button-bg-color: rgb(170 137 34);
+	--input-bg-color: transparent;
+	background-color: rgb(18 18 21);
 }
 
 .hero {
@@ -70,7 +92,7 @@ table {
 	position: relative;
 }
 
-.container.light .hero {
+.container .hero {
 	background-image: var(--background-image);
 	background-size: cover;
 	background-position-x: -20rem;
@@ -89,7 +111,7 @@ table {
 
 .hero .hero-title .hero-text {
 	font-size: 6.5rem;
-	color: rgb(234, 237, 236);
+	color: var(--contract-text-color);
 	font-family: 'Norse Bold', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
 	position: relative;
 	top: 1rem;
@@ -102,18 +124,18 @@ table {
 
 .container .img-credit {
 	text-align: center;
-	color: rgb(72 101 109);
+	color: var(--text-color);
 	position: absolute;
 	bottom: 1rem;
 	width: 100%;
 }
 
 .container .img-credit a {
-	color: rgb(72 101 109);
+	color: var(--text-color);
 }
 
 .container .img-credit a:visited {
-	color: rgb(72 101 109);
+	color: var(--text-color);
 }
 
 .form-container {
@@ -122,7 +144,7 @@ table {
 	flex-direction: column;
 	justify-content: center;
 	gap: 3rem;
-	color: rgb(45, 65, 69);
+	color: var(--form-text-color);
 }
 
 .form-container .cta-text {
@@ -132,7 +154,7 @@ table {
 	width: 80%;
 	line-height: 1.2;
 	font-weight: 400;
-	color: rgb(33, 47, 50);
+	color: var(--cta-text-color);
 }
 
 .form-container form {
@@ -143,7 +165,7 @@ table {
 	border-bottom: var(--form-border);
 	padding: 1.75rem 2.5rem;
 	padding-bottom: 2.5rem;
-	box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.384);
+	box-shadow: 0px 10px 20px var(--form-shadow-color);
 	gap: 1.45rem;
 }
 
@@ -176,6 +198,8 @@ table {
 	padding: 5px 10px;
 	border: 1px solid rgb(170, 169, 169);
 	border-radius: 5px;
+	background-color: var(--input-bg-color);
+	color: var(--form-text-color);
 }
 
 .form-container .field-group {
@@ -192,11 +216,11 @@ table {
 }
 
 .form-action a {
-	color: rgb(72 101 109);
+	color: var(--text-color);
 }
 
 .form-action a:visited {
-	color: rgb(72 101 109);
+	color: var(--text-color);
 }
 
 .form-action button {
@@ -204,8 +228,8 @@ table {
 	padding: 0.75rem 2rem;
 	font-size: 1rem;
 	font-weight: 700;
-	background-color: rgb(72 101 109);
+	background-color: var(--button-bg-color);
 	border: none;
 	border-radius: 4px;
-	color: rgb(234, 237, 236);
+	color: var(--contract-text-color);
 }
