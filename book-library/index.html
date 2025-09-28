@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wdth,wght@0,75..100,100..900;1,75..100,100..900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="./style.css">
+  <title>Book Library</title>
+</head>
+<body>
+  <div class="container">
+    <div class="header">
+      <h1>Book Library</h1>
+
+      <button type="button" id="newBookBtn"">New</button>
+    </div>
+
+    <div class="books-list">
+    </div>
+  </div>
+  <dialog closedby="any">
+    <div class="book-form-container">
+      <form action="" id="addBookForm">
+        <div class="form-field">
+          <label for="bookTitle">Title</label>
+          <input type="text" name="title" id="bookTitle">
+        </div>
+        <div class="form-field">
+          <label for="bookAuthor">Author</label>
+          <input type="text" name="author" id="bookAuthor">
+        </div>
+        <div class="form-field">
+          <label for="bookShortDesc">Short Description</label>
+          <textarea name="shortDesc" id="bookShortDesc" rows="5"></textarea>
+        </div>
+        <div class="form-field">
+          <label for="bookPages">Page</label>
+          <input type="number" name="pages" id="bookPages">
+        </div>
+        <div class="form-field">
+          <label for="read"></label>
+          <div class="radio-input">
+            <label for="bookRead">Read</label>
+            <input type="radio" id="bookRead" name="read" value="true">
+            <label for="bookNotRead">Not Read</label>
+            <input type="radio" id="bookNotRead" name="read" value="false" checked>
+          </div>
+        </div>
+        <div class="book-form-actions">
+          <button type="submit" form="addBookForm">Add Book</button>
+          <button type="button" id="clearBookForm">Reset</button>
+          <button type="button" id="closeBookForm">Close</button>
+        </div>
+      </form>
+    </div>
+  </dialog>
+
+  <script src="./script.js" defer></script>
+</body>
+</html>

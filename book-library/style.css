@@ -1,0 +1,200 @@
+/* http://meyerweb.com/eric/tools/css/reset/
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 12px;
+	font: inherit;
+	vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+body {
+	line-height: 1;
+}
+ol, ul {
+	list-style: none;
+}
+blockquote, q {
+	quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: '';
+	content: none;
+}
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+
+:root {
+  font-family: "Roboto", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 400;
+  font-style: normal;
+  font-variation-settings:
+    "wdth" 100;
+  font-size: 16px;
+}
+
+.container {
+  padding: 10px;
+  width: min(calc(100% - 20px), 1980px);
+  background-color: blanchedalmond;
+  min-height: calc(100vh - 20px);
+}
+
+.container .header {
+  padding-bottom: 20px;
+  padding-left: 20px;
+  padding-right: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 20px;
+  border-bottom: 1px solid #000000;
+  box-shadow: 2px 2px 2px -1px rosybrown;
+}
+
+.container .header h1 {
+  font-size: 32px;
+  font-weight: 900;
+  text-shadow: 0 5px 10px rosybrown;
+}
+
+button {
+  padding: 5px 15px;
+  background-color: aquamarine;
+  font-weight: 900;
+  border-radius: 5px;
+  box-shadow: 0 5px 10px rosybrown;
+  cursor: pointer;
+}
+
+.books-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+  row-gap: 20px;
+  column-gap: 20px;
+}
+
+.book-item {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  border: 1px solid #000000;
+  padding: 20px;
+  box-shadow: 2px 2px 2px -1px rosybrown;
+  border-radius: 10px;
+  position: relative;
+  overflow: hidden;
+}
+
+.book-item .read-badge {
+  position: absolute;
+  align-self: flex-end;
+  color: rgb(147, 147, 147, 0.8);
+  font-style: italic;
+}
+
+.book-item .book-title {
+  font-size: 24px;
+  font-weight: 600;
+}
+
+.book-item .book-author {
+  font-size: 18px;
+  font-style: italic;
+}
+.book-item .short-desc {
+  margin-top: 10px;
+  margin-bottom: 20px;
+  font-size: 16px;
+  color: rgb(132, 131, 131);
+  font-style: italic;
+}
+.book-item .pages {
+  font-size: 14px;
+  color: rgb(132, 131, 131);
+  font-style: italic;
+  align-self: flex-end;
+}
+
+.book-item .pages .page-number {
+  font-weight: 500;
+}
+
+.book-item .book-actions {
+  margin-top: 30px;
+  align-self: flex-end;
+}
+
+.dialog-backdrop dialog {
+  top: min(10vh, 100px);
+  border: 1px solid orangered;
+  border-radius: 10px;
+}
+
+#addBookForm {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  padding: 20px;
+}
+
+#addBookForm .form-field {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+}
+
+.form-field input[type="text"],
+.form-field input[type="number"],
+.form-field textarea {
+  width: 250px;
+  font-size: 18px;
+}
+
+.form-field input[type="text"] {
+  height: 22px;
+  border-radius: 5px;
+}
+
+.form-field label {
+  width: 200px;
+  font-weight: 500;
+  font-size: 18px;
+}
+
+.book-form-actions {
+  margin-top: 20px;
+  display: flex;
+  gap: 10px;
+  justify-content: flex-end;
+}
+
+dialog::backdrop {
+  background-color: rgba(115, 115, 115, 0.5);
+  backdrop-filter: blur(2px);
+}
